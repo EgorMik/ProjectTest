@@ -1,0 +1,41 @@
+﻿@model Presentation_Layer.Model.Company
+@{
+    Layout = "_Layout";
+    var title = "Create Company";
+    ViewData["Title"] = title;
+}
+<style>
+    .input-validation-error {
+        border-color: red;
+    }
+    h2 {
+        text-align: center;
+    }
+
+    form {
+        width: 500px;
+        margin: auto;
+    }
+</style>
+<h2>@title</h2><div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form class="m-1 p-1" method="post">
+    <div class="form-group">
+        <label asp-for="NameCompany"></label>
+        <input asp-for="NameCompany" class="form-control" />
+        <span asp-validation-for="NameCompany" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SizeCompany"></label>
+        <input asp-for="SizeCompany" type="text" class="form-control" />
+        <span asp-validation-for="SizeCompany" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FormOfIncorporation"></label>
+        <input asp-for="FormOfIncorporation" type="text" class="form-control" />
+        <span asp-validation-for="FormOfIncorporation" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>

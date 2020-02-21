@@ -1,0 +1,65 @@
+﻿@model Presentation_Layer.Model.Employee
+
+@{
+    Layout = "_Layout";
+    var title = "Create Employee";
+    ViewData["Title"] = title;
+}
+@*@Html.DropDownList("Prof",
+                   new SelectList(Enum.GetValues(typeof(Presentation_Layer.Model.Employee.Job))),
+                   "Select Job",
+                   new { @class = "form-control" })*@
+
+<style>
+    .input-validation-error {
+        border-color: red;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    form {
+        width: 500px;
+        margin: auto;
+    }
+</style>
+<h2>@title</h2><div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form class="m-1 p-1" method="post">
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" type="text" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MiddleName"></label>
+        <input asp-for="MiddleName" type="text" class="form-control" />
+        <span asp-validation-for="MiddleName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Position"></label>
+        <input asp-for="Position" type="text" class="form-control" />
+      
+
+        <span asp-validation-for="Position" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Company"></label>
+        <input asp-for="Company" type="text" class="form-control" />
+        <span asp-validation-for="Company" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Date"></label>
+        <input asp-for="Date" value="" 2018-10-22" type="date" class="form-control" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
